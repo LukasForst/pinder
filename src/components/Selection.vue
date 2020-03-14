@@ -78,5 +78,8 @@
 </script>
 
 <style scoped>
-
+    .value-slider-container {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
 </style>
