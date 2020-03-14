@@ -4,13 +4,13 @@ export function sortByDiameter(x, y) {
 
 export function mapMoons(moons) {
     return moons.map(x => ({
-        'name': x.name, 'diameter': x.radius * 2
+        'name': x.name, 'diameter': x.radius * 2, 'url': 'https://en.wikipedia.org/wiki/' + x.name + '_(moon)'
     }))
 }
 
 export function mapPlanets(planets) {
     return planets.map(x => ({
-        'name': x.name, 'diameter': x.diameter
+        'name': x.name, 'diameter': x.diameter, 'url': 'https://en.wikipedia.org/wiki/' + x.name + '_(planet)'
     }))
 }
 

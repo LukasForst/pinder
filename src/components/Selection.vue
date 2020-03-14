@@ -5,9 +5,9 @@
             {{selectedMoon ? selectedMoon.name : 'Generate name for your future project!'}}
         </h1>
 
-        <p>
-            {{selectedMoon ? 'Diameter: ' : ''}} <b>{{selectedMoon ? selectedMoon.diameter + ' km' : ''}}</b>
-        </p>
+        <div v-if="selectedMoon" id="hide">
+            Diameter: <b>{{selectedMoon.diameter + ' km'}}</b> <a target="_blank" :href="selectedMoon.url">[wiki]</a>
+        </div>
 
         <div class="value-slider-container">
             <vue-slider class="slider" v-model="value"/>
