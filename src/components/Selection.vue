@@ -2,8 +2,12 @@
     <div class="selection">
 
         <h1>
-            {{selectedName ? selectedName : 'Generate name for your future project!'}}
+            {{selectedMoon ? selectedMoon.name : 'Generate name for your future project!'}}
         </h1>
+
+        <p>
+            {{selectedMoon ? 'Diameter: ' : ''}} <b>{{selectedMoon ? selectedMoon.diameter : ''}}</b>
+        </p>
 
         <div class="value-slider-container">
             <vue-slider class="slider" v-model="value"/>
@@ -36,7 +40,7 @@
         },
         data() {
             return {
-                selectedName: null,
+                selectedMoon: null,
                 usePlanets: true,
                 useMoons: true,
                 value: 50,
@@ -49,16 +53,18 @@
                 let arr = []
 
                 if (this.useMoons) {
-                    arr = arr.concat(this.moons)
+                    arr.push(...this.moons)
                 }
 
                 if (this.usePlanets) {
-                    arr = arr.concat(this.planets)
+                    arr.push(...this.planets)
                 }
                 arr.sort(sortByDiameter)
 
-                const idx = get_index(arr.length,this.value, 100)
-                this.selectedName = arr[idx].name
+                if (arr.length !== 0) {
+                    const idx = get_index(arr.length, this.value, 100)
+                    this.selectedMoon = arr[idx]
+                }
             }
         },
         created: function () {
