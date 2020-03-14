@@ -7,6 +7,7 @@
         </div>
         <div v-else>
             <h1>Generate name for your future project!</h1>
+            Use slider to indicate how big is your project!
         </div>
 
         <div class="value-slider-container">
