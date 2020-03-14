@@ -1,4 +1,6 @@
 # [Pinder](https://pinder.forst.pw/)
+![Deploy to GitHub Pages](https://github.com/LukasForst/pinder/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
+
 Pinder is simple application that chooses the name of your project for you!
 Use slider to select the project size and let the Pinder generate the project name.
 Pinder is hosted on Github Pages and is deployed [here](https://pinder.forst.pw/).
