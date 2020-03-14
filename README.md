@@ -5,7 +5,8 @@ Pinder is hosted on Github Pages and is deployed [here](https://pinder.forst.pw/
 
 It uses [this](https://stackoverflow.com/a/49434653/7169288) random number generator
 which allows the get random number from the shifted [Gaussian Distribution](https://en.wikipedia.org/wiki/Normal_distribution)
-where the mean value is value of slider extrapolated to the size of the planet database.
+where the mean value is value of slider extrapolated to the size of the planet database, 
+that was taken from [here](https://github.com/devstronomy/nasa-data-scraper/tree/master/data/json).
 
 ## Development
 Vue JS with yarn.
