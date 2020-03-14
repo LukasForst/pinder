@@ -1460,16 +1460,6 @@
     "albedo": 0.04
   },
   {
-    "id": 172,
-    "planetId": 8,
-    "name": "S/2004 N1",
-    "gm": 3.0E-4,
-    "radius": 9.0,
-    "density": 1.3,
-    "magnitude": 26.5,
-    "albedo": 0.1
-  },
-  {
     "id": 173,
     "planetId": 9,
     "name": "Charon",
