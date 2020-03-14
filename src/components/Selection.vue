@@ -6,7 +6,7 @@
         </h1>
 
         <p>
-            {{selectedMoon ? 'Diameter: ' : ''}} <b>{{selectedMoon ? selectedMoon.diameter : ''}}</b>
+            {{selectedMoon ? 'Diameter: ' : ''}} <b>{{selectedMoon ? selectedMoon.diameter + ' km' : ''}}</b>
         </p>
 
         <div class="value-slider-container">
