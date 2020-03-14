@@ -27,7 +27,7 @@
     import VueSlider from 'vue-slider-component'
 
     import 'vue-slider-component/theme/antd.css'
-    import {getRandom, sortAndMapPlanets, sortAndMapMoons} from "@/utils/Utils";
+    import {mapMoons, mapPlanets, sortByDiameter, get_index} from "@/utils/Utils";
 
     export default {
         name: 'Selection',
@@ -55,22 +55,23 @@
                 if (this.usePlanets) {
                     arr = arr.concat(this.planets)
                 }
+                arr.sort(sortByDiameter)
 
-                const idx = getRandom(0, arr.length)
-                this.selectedName = arr[idx]
+                const idx = get_index(arr.length,this.value, 100)
+                this.selectedName = arr[idx].name
             }
         },
         created: function () {
             fetch("/moons.json")
                 .then(r => r.json())
                 .then(json => {
-                    this.moons = sortAndMapMoons(json);
+                    this.moons = mapMoons(json);
                 });
 
             fetch("/planets.json")
                 .then(r => r.json())
                 .then(json => {
-                    this.planets = sortAndMapPlanets(json);
+                    this.planets = mapPlanets(json);
                 });
         }
     }
