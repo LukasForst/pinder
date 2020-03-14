@@ -1,12 +1,12 @@
 <template>
     <div class="selection">
 
-        <h1>
-            {{selectedMoon ? selectedMoon.name : 'Generate name for your future project!'}}
-        </h1>
-
         <div v-if="selectedMoon" id="hide">
+            <h1>{{selectedMoon.name}}</h1>
             Diameter: <b>{{selectedMoon.diameter + ' km'}}</b> <a target="_blank" :href="selectedMoon.url">[wiki]</a>
+        </div>
+        <div v-else>
+            <h1>Generate name for your future project!</h1>
         </div>
 
         <div class="value-slider-container">
