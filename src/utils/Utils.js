@@ -15,16 +15,29 @@ export function mapPlanets(planets) {
 }
 
 export function get_index(arrayLength, selectedValue, maxSelectionValue) {
-    const extrapolated = (selectedValue / maxSelectionValue) * arrayLength
-    const idx = Math.round(randn_bm(0, 2* Math.round(extrapolated), 1))
-    return idx > arrayLength - 1 ? arrayLength - 1 : idx
+    const extrapolated = Math.round((selectedValue / maxSelectionValue) * arrayLength)
+
+    const disp = 20
+
+    const rd = randn_bm(extrapolated - disp, extrapolated + disp, 1)
+    return normalize(Math.round(rd), 0, arrayLength - 1)
+}
+
+function normalize(value, min, max) {
+    if (value > max) {
+        return max
+    } else if (value < min) {
+        return min
+    } else {
+        return value
+    }
 }
 
 function randn_bm(min, max, skew) {
     let u = 0, v = 0;
-    while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
-    while(v === 0) v = Math.random();
-    let num = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+    while (u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+    while (v === 0) v = Math.random();
+    let num = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
 
     num = num / 10.0 + 0.5; // Translate to 0 -> 1
     if (num > 1 || num < 0) num = randn_bm(min, max, skew); // resample between 0 and 1 if out of range
