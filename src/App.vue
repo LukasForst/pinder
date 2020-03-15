@@ -1,6 +1,11 @@
 <template>
     <div id="app">
-        <Selection />
+        <Selection/>
+
+        <div id="footer">
+            <a class="github-button" href="https://github.com/LukasForst/pinder" data-size="large"
+               aria-label="Star LukasForst/pinder on GitHub">Github</a>
+        </div>
     </div>
 </template>
 
@@ -24,8 +29,16 @@
         color: #2c3e50;
         margin-top: 60px;
     }
+
     body {
         overflow: hidden;
         height: 100vh;
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
     }
 </style>
